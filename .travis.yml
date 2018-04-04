@@ -7,6 +7,15 @@ matrix:
     include:
         - os: linux
           compiler: gcc
+        - os: linux
+          addons:
+            apt:
+              sources:
+                - ubuntu-toolchain-r-test
+              packages:
+                - g++-7
+          env:
+            - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
         - os: osx
           compiler: clang
 
@@ -16,6 +25,7 @@ before_install:
       sudo add-apt-repository ppa:beineri/opt-qt592-trusty -y &&
       sudo apt-get update -qq
     fi
+  - eval "${MATRIX_EVAL}"
 
 install:
   - |
