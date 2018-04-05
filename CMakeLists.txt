@@ -1,5 +1,8 @@
 project(android-file-transfer)
 
+set(CMAKE_VERBOSE_MAKEFILE on)
+set(CMAKE_CXX_FLAGS -v ${CMAKE_CXX_FLAGS})
+
 set(VERSION_MAJOR "3")
 set(VERSION_MINOR "3")
 set(VERSION_PATCH "0")
